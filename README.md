@@ -5,4 +5,4 @@ Created By:
 Cole Bowers,
 Rishab Kaup,
 Alvin O'Garro,
-Akash Patel,
+Akash Patel
