@@ -1,5 +1,5 @@
 # HackGT2016
-### Webapp that tracks if tags are trending positively or negatively
+### GroupMe Bot to prevent and monitor harrassment
 
 Created By:
 Cole Bowers,
