@@ -7,7 +7,7 @@ headers['Content-Type'] = 'application/json';
 headers['Ocp-Apim-Subscription-Key'] = account_key;
 headers['Accept'] = 'application/json';
 
-var input_texts = '{"documents":[{"id":"1","text":"dick!","name": "John"},{"id":"2","text":"hello foo world","name": "John"},{"id":"three","text":"hello my world","name": "John"},]}';
+var input_texts = '{"documents":[{"id":"1","text":"I hate you","name": "John"}]}';
 
 num_detect_langs = 1;
 
@@ -17,12 +17,19 @@ var method = "POST"
 
 var async = true;
 var request = new XMLHttpRequest();
-request.onload = function () {
-	var response = request.responseText;
-}
+
 request.open(method,batch_sentiment_url,async);
 request.setRequestHeader("Content-Type","application/json");
 request.setRequestHeader("Ocp-Apim-Subscription-Key",account_key);
 request.setRequestHeader("Accept","application/json");
 
-request.send();
+request.onreadystatechange = processRequest;
+
+function processRequest(e) {
+	if (request.readyState == 4 && request.status == 200) {
+
+		sentiment = JSON.parse(request.responseText);
+	}
+}
+
+request.send(input_texts);
