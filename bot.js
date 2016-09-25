@@ -8,7 +8,6 @@ var plotly = require('plotly')('aogarro3', 'sizkqcez0k');
 var botID = process.env.BOT_ID;
 
 
-
 //Sentiment
 function sentiment(json) {
     var base_url = 'https://westus.api.cognitive.microsoft.com/';
@@ -115,7 +114,6 @@ function userData(MongoClient, url, messageSentiment) {
 */
 var database = [];
 
-
 function sendJSON(json) {
     var s = JSON.parse(sentiment(json));
     //botPrint(s.documents[0].score);
@@ -178,6 +176,7 @@ function respond() {
   }
 }
 function aboutFilter(request) {
+
     var about = /@bot\sabout/i;
     var cmd = /@bot\scmd/i;
     var help = /@bot\shelp/i;
