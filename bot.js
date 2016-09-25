@@ -260,9 +260,9 @@ function postAboutMessage(request) {
   if(about.test(request.text)) {
       botResponse = "I am designed to help promote a supportive chat enviorment. I monitor offensive language and harassment in this group.";
   } else if(cmd.test(request.text)) {
-      botResponse = "@bot followed by...\nabout -> description\ncmd -> commands\nhelp -> description + commands\n@stats -> gets group sentiment stats (Note: Takes time)";
+      botResponse = "@bot followed by...\nabout -> description\ncmd -> commands\nhelp -> description + commands\nstats -> gets group sentiment stats (Note: Takes time)";
   } else if(help.test(request.text)) {
-      botResponse = "I am designed to help promote a supportive chat enviorment. I monitor offensive language and harassment in this group.\nCommands:\n@bot followed by...\nabout -> description\ncmd -> commands\nhelp -> description + commands\n@stats -> gets group sentiment stats";
+      botResponse = "I am designed to help promote a supportive chat enviorment. I monitor offensive language and harassment in this group.\nCommands:\n@bot followed by...\nabout -> description\ncmd -> commands\nhelp -> description + commands\nstats -> gets group sentiment stats";
   }  else if (bp.test(request.text)) {
       botResponse = database.length.toString();
   } else if (clear.test(request.text)) {
